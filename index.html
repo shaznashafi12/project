@@ -48,11 +48,7 @@
   scrollbar-width: none;     
 }
 
-/* .category-row {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-    } */
+
 
    .category-card::after 
     {
@@ -88,21 +84,18 @@
   .category-card {
     transition: transform 0.3s ease;
   }
-/* .category-text {
-    background: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: bold;
-} */
+
 .category-circle {
   width: 180px;  
   height: 180px; 
   border-radius: 50%;
-  border: 4px solid#efeeee;
+  border: 3px solid#efeeee;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+a {
+  position: relative;
+  z-index: 2; 
 }
 
 
@@ -150,7 +143,7 @@
 
                     <div class="d-flex gap-2 flex-wrap pt-3 px-2 pe-2">
                         <div class="shadow rounded-circle d-flex align-items-center justify-content-center" style="background-color: white; width: 32px; height: 32px;">
-                            <a href="cart.html"><i class="fa-solid fa-cart-shopping text-dark"></i></a>
+                            <a href="../cart.html"><i class="fa-solid fa-cart-shopping text-dark"></i></a>
                         </div>
                         <div class="shadow rounded-circle d-flex align-items-center justify-content-center" style="background-color: white; width: 32px; height: 32px;">
                             <i class="fa-solid fa-bell text-dark"></i>
