@@ -120,11 +120,103 @@ a {
   position: relative;
   z-index: 2; 
 }
+.navbar-toggler {
+  z-index: 9999;
+}
+/* ===== MOBILE WIDTH FIX ONLY ===== */
+@media (max-width: 768px) {
 
+  /* MAKE FULL WIDTH CONTAINER */
+  .container,
+  .container-fluid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* FEATURED + OFFER ZONE CARDS FULL WIDTH */
+  .scroll-container .col-auto {
+    width: 100% !important;       /* full width */
+    max-width: 100% !important;   /* remove limit */
+    min-width: unset !important;  /* 💥 overrides inline 220px */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* REMOVE SIDE GAP INSIDE SCROLL */
+  .scroll-container {
+    padding: 0 !important;
+    gap: 1rem; /* keep spacing but not too big */
+  }
+
+  /* CENTER CONTENT NICELY */
+  .scroll-container > div {
+    width: 100%;
+  }
+
+}
+/* ===== REMOVE SIDE WHITE SPACE COMPLETELY ===== */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Fix Bootstrap row overflow issue */
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Remove extra container padding on mobile */
+@media (max-width: 768px) {
+
+  .container,
+  .container-fluid {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  /* Remove big custom paddings from your sections */
+  [style*="padding-left: 50px"],
+  [style*="padding-right: 50px"],
+  [style*="padding-left: 40px"],
+  [style*="padding-right: 40px"] {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Fix scroll container overflow */
+  .scroll-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+}
+/* ACTIVE CARD (MOBILE TAP EFFECT) */
+.newarrival-card.active {
+  transform: scale(1.03);
+}
+
+.newarrival-card.active .newarrival-text {
+  opacity: 1;
+}
 
 
   </style>
 </head>
+<script>
+const cards = document.querySelectorAll(".newarrival-card");
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    // remove active from others
+    cards.forEach(c => c.classList.remove("active"));
+
+    // add to clicked one
+    card.classList.add("active");
+  });
+});
+</script>
 <body>
    
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
@@ -139,9 +231,9 @@ a {
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse w-100 px-2 pe-5" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-lg-end flex-wrap align-items-center">
-                <li class="nav-item">
+<div class="collapse navbar-collapse px-2" id="navbarSupportedContent">
+  <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                  <li class="nav-item">
                     <a class="nav-link active text-center fw-bold" style="font-size: small;color: rgb(17, 57, 95); margin-left:0 !important;font-family: 'Poppins', sans-serif;margin-top: 30px;margin-bottom: 10px;">Home</a>
                 </li>
                 <li class="nav-item">

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Input and Display</title>
+</head>
+<body>
+    <script>
+        function main() {
+            let ar=[];
+            getArray(ar);
+            displayArray(ar);
+        }
+
+        function getArray(ar) {
+            let size=parseInt(prompt("Enter the size of the array:"));
+            for (let i=0;i<size;i++) {
+                ar[i]=parseInt(prompt(`Enter value for element ${i}:`));
+            }
+        }
+
+        function displayArray(ar) {
+            console.log("The array values are:");
+            for (let i=0;i< ar.length;i++) {
+                console.log(`Element ${i}:${ar[i]}`);
+            }
+        }
+
+        main();
+    </script>
+</body>
+</html>

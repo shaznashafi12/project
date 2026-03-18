@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Values of arrays</title>
+</head>
+<body>
+    <script>
+        let arr=parseInt(prompt("enter the size of arrays:"));
+        let arr1=[];
+        alert("enter the values of array 1:");
+        for(let i=0;i<arr;i++){ 
+            arr1[i]=prompt("enter the numbers:");
+        }
+        let arr2=[];
+        alert("enter the values of array 2:");
+        for(let i=0;i<arr;i++){
+            arr2[i]=prompt("enter the numbers:");
+        }
+         for(let i=0;i<arr;i++){
+            let temp=arr1[i];
+            arr1[i]=arr2[i];
+            arr2[i]=temp;
+         }
+         document.write("array after swapping:<br><br>");
+         document.write("array1:" + arr1.join(",") + "<br>");
+         document.write("array2:" + arr2.join(","));
+        
+    </script>
+</body>
+</html>
